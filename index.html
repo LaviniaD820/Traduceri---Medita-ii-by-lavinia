@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Servicii de Traducere & Meditații</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f8f8;
+      color: #333;
+    }
+    header {
+      background-color: #d6cde6; /* pastel violet */
+      color: #4b3b73;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      color: #4b3b73;
+      margin-left: 1rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: #ececec url('https://www.transparenttextures.com/patterns/white-wall.png');
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 4rem 2rem;
+      text-align: center;
+      transition: background-position 0.3s ease-out;
+      color: #4b3b73;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .cta-buttons a {
+      display: inline-block;
+      margin: 1rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #a19ccf; /* pastel mov */
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+    .cta-buttons a:hover {
+      background-color: #7f79c4;
+    }
+    section {
+      padding: 2rem;
+    }
+    .services {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .service {
+      flex: 1 1 45%;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      color: #4b3b73;
+    }
+    .why-choose-us ul {
+      list-style: none;
+      padding: 0;
+      color: #4b3b73;
+    }
+    .why-choose-us li {
+      padding: 0.5rem 0;
+    }
+    .testimonials blockquote {
+      font-style: italic;
+      margin: 1rem 0;
+      color: #5e4a88;
+    }
+    .testimonials cite {
+      display: block;
+      text-align: right;
+      font-style: normal;
+      font-weight: bold;
+      color: #3d3050;
+    }
+    footer {
+      background: #d6cde6;
+      color: #4b3b73;
+      padding: 1rem 2rem;
+      text-align: center;
+      font-weight: 600;
+    }
+    .social-icons a {
+      margin: 0 0.5rem;
+      color: #4b3b73;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+    form {
+      margin-top: 1rem;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    form button {
+      background-color: #a19ccf;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+    form button:hover {
+      background-color: #7f79c4;
+    }
+    .lang-links {
+      text-align: center;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+    .lang-links a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #7f79c4;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .lang-links a:hover {
+      text-decoration: underline;
+    }
+    /* Galerie foto */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .gallery img {
+      width: 150px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+    /* Lightbox */
+    #lightboxOverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(200, 200, 210, 0.85);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+    }
+    #lightboxOverlay img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.3);
+    }
+    /* Meteo widget */
+    #weatherWidget {
+      background: #d4e8f7;
+      color: #34495e;
+      padding: 1rem;
+      border-radius: 10px;
+      max-width: 250px;
+      margin: 1rem auto;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      font-family: 'Arial', sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>TranslationsEdByLavinia</h2>
+    <nav>
+      <a href="#">Acasă</a>
+      <a href="#services">Servicii</a>
+      <a href="#pricing">Prețuri</a>
+      <a href="#about">Despre</a>
+      <a href="#contact">Contact</a>
+      <a href="https://calendly.com/your-booking-link" target="_blank">Programează o lecție</a>
+    </nav>
+  </header>
+
+  <div class="lang-links">
+    <a href="#" onclick="switchLanguage('en')">English</a>
+    <a href="#" onclick="switchLanguage('ro')">Română</a>
+    <a href="#" onclick="switchLanguage('fr')">Français</a>
+  </div>
+
+  <section class="hero">
+    <h1 id="hero-title">Cuvinte clare. Voci încrezătoare. Peste granițe.</h1>
+    <p id="hero-subtitle">
+      Traduceri profesionale și meditații personalizate în engleză, română și franceză.<br />
+      Fie că lansezi un proiect internațional sau înveți local – noi îți ducem cuvintele departe.
+    </p>
+    <p><strong>„Traducem. Predăm. Conectăm.”</strong></p>
+    <div class="cta-buttons">
+      <a href="#contact" id="cta-quote">Cere o ofertă gratuită</a>
+      <a href="https://calendly.com/your-booking-link" target="_blank" id="cta-lesson">Programează o lecție demonstrativă</a>
+    </div>
+  </section>
+
+  <!-- Galerie foto -->
+  <section id="gallerySection">
+    <h2>Galerie Foto</h2>
+    <div class="gallery">
+      <img src="https://source.unsplash.com/featured/?language,book" alt="Imagine 1" />
+      <img src="https://source.unsplash.com/featured/?translation,work" alt="Imagine 2" />
+      <img src="https://source.unsplash.com/featured/?study,language" alt="Imagine 3" />
+      <img src="https://source.unsplash.com/featured/?learning,computer" alt="Imagine 4" />
+    </div>
+  </section>
+
+  <!-- Lightbox pentru galerie -->
+  <div id="lightboxOverlay">
+    <img src="" alt="Imagine mărită" />
+  </div>
+
+  <!-- Meteo widget -->
+  <section id="weatherWidget">
+    <h3
